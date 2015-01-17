@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Erudite</string>
+    <string name="title_activity_main">Erudite</string>
+    <string name="title_activity_detail">Detail</string>
+    <string name="glass_voice_prompt">make me smarter</string>
+
+</resources>
