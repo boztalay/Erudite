@@ -38,6 +38,9 @@ public class MainActivity extends Activity implements RecognitionListener {
     private StopWordChecker mStopWordChecker;
     private HashMap<String, String> mWikiContents;
 
+    private boolean mIsLoading;
+    private String mWordLoading;
+
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -45,6 +48,9 @@ public class MainActivity extends Activity implements RecognitionListener {
         mWordsSeen = new ArrayList<String>();
         mStopWordChecker = new StopWordChecker(this);
         mWikiContents = new HashMap<String, String>();
+
+        mIsLoading = false;
+        mWordLoading = null;
 
         mCardScroller = new CardScrollView(this);
         mCardAdapter = new CardScrollAdapter() {
@@ -69,6 +75,8 @@ public class MainActivity extends Activity implements RecognitionListener {
 
                 if(wikiContents != null) {
                     card.setFootnote("Loaded");
+                } else if(mIsLoading && word.equals(mWordLoading)) {
+                    card.setFootnote("Loading...");
                 }
 
                 return card.getView();
@@ -86,6 +94,14 @@ public class MainActivity extends Activity implements RecognitionListener {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final String word = mWordsSeen.get(position);
+
+                if(mIsLoading) {
+                    return;
+                } else {
+                    mIsLoading = true;
+                    mWordLoading = word;
+                    mCardAdapter.notifyDataSetChanged();
+                }
 
                 // This is jank, but it's a hackathon
 
@@ -132,6 +148,9 @@ public class MainActivity extends Activity implements RecognitionListener {
 
                     @Override
                     protected void onPostExecute(Void result) {
+                        mIsLoading = false;
+                        mWordLoading = null;
+
                         mCardAdapter.notifyDataSetChanged();
 
                         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
