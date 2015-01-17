@@ -114,10 +114,8 @@ public class MainActivity extends Activity implements RecognitionListener {
                             String pageKey = (String) it.next();
                             String extractContent = json.getJSONObject("query").getJSONObject("pages").getJSONObject(pageKey).getString("extract");
 
-                            String contents;
-                            if(!extractContent.contains("may refer to")) {
-                                contents = extractContent.substring(0, extractContent.indexOf("</p>"));
-                            } else {
+                            String contents = extractContent.substring(0, extractContent.indexOf("</p>"));
+                            if(contents.contains("refer to") || contents.contains("refers to")) {
                                 contents = extractContent.substring(extractContent.indexOf("<li>"), extractContent.indexOf("</li>") + 1);
                             }
 
