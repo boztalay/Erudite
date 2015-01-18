@@ -176,7 +176,7 @@ public class MainActivity extends Activity implements RecognitionListener {
 
                             String contents = extractContent.substring(0, extractContent.indexOf("</p>"));
                             contents = contents.replaceAll("\\<.*?\\>", "");
-                            
+
                             mWikiContents.put(word, contents);
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -210,7 +210,6 @@ public class MainActivity extends Activity implements RecognitionListener {
     }
 
     private void startRecognition() {
-        mSpeechRecognizer.stopListening();
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true);
@@ -307,20 +306,17 @@ public class MainActivity extends Activity implements RecognitionListener {
     @Override
     public void onPartialResults(Bundle bundle) {
         ArrayList<String> results = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
-        String resultsString = "";
-        for (String result : results) {
-            resultsString += result + " ";
-        }
 
-        Log.d("Recognition", "onPartialResults: " + resultsString);
+        Log.d("Recognition", "onPartialResults");
 
         ArrayList<String> rawResults = new ArrayList<String>();
         for (String result : results) {
             String[] words = result.split(" ");
             for (String word : words) {
                 String trimmedWord = word.trim();
+
                 if (trimmedWord.length() > 0) {
-                    rawResults.add(word.trim());
+                    rawResults.add(trimmedWord);
                 }
             }
         }
