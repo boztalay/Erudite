@@ -175,8 +175,12 @@ public class MainActivity extends Activity implements RecognitionListener {
                             String extractContent = json.getJSONObject("query").getJSONObject("pages").getJSONObject(pageKey).getString("extract");
 
                             String contents = extractContent.substring(0, extractContent.indexOf("</p>"));
-                            contents = contents.replaceAll("\\<.*?\\>", "");
+                            int referToSumThing = contents.indexOf("refer to") + contents.indexOf("refers to");
+                            if (referToSumThing >= 0 && referToSumThing < 75) {
+                                contents = extractContent.substring(extractContent.indexOf("<li>"), extractContent.indexOf("</li>") + 1);
+                            }
 
+                            contents = contents.replaceAll("\\<.*?\\>", "");
                             mWikiContents.put(word, contents);
                         } catch (Exception e) {
                             e.printStackTrace();
