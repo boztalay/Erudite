@@ -303,41 +303,51 @@ public class MainActivity extends Activity implements RecognitionListener {
     }
 
     @Override
-    public void onPartialResults(Bundle bundle) {
-        ArrayList<String> results = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+    public void onPartialResults(final Bundle bundle) {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                ArrayList<String> results = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
 
-        Log.d("Recognition", "onPartialResults");
+                Log.d("Recognition", "onPartialResults");
 
-        ArrayList<String> rawResults = new ArrayList<String>();
-        for (String result : results) {
-            String[] words = result.split(" ");
-            for (String word : words) {
-                String trimmedWord = word.trim();
+                ArrayList<String> rawResults = new ArrayList<String>();
+                for (String result : results) {
+                    String[] words = result.split(" ");
+                    for (String word : words) {
+                        String trimmedWord = word.trim();
 
-                if (trimmedWord.length() > 0) {
-                    rawResults.add(trimmedWord);
+                        if (trimmedWord.length() > 0) {
+                            rawResults.add(trimmedWord);
+                        }
+                    }
                 }
+
+                for (String result : rawResults) {
+                    // Might get expensive...
+                    if (!mWordsSeen.contains(result) && !mStopWordChecker.isStopWord(result)) {
+
+                        if (isFirstRun) {
+                            isFirstRun = false;
+                            mWordsSeen.clear();
+                        }
+
+                        mWordsSeen.add(0, result);
+
+                        if (mWordsSeen.size() > MAX_WORDS) {
+                            mWordsSeen.remove(mWordsSeen.size() - 1);
+                        }
+                    }
+                }
+
+                return null;
             }
-        }
 
-        for (String result : rawResults) {
-            // Might get expensive...
-            if (!mWordsSeen.contains(result) && !mStopWordChecker.isStopWord(result)) {
-
-                if (isFirstRun) {
-                    isFirstRun = false;
-                    mWordsSeen.clear();
-                }
-
-                mWordsSeen.add(0, result);
-
-                if (mWordsSeen.size() > MAX_WORDS) {
-                    mWordsSeen.remove(mWordsSeen.size() - 1);
-                }
+            @Override
+            protected void onPostExecute(Void result) {
+                mCardAdapter.notifyDataSetChanged();
             }
-        }
-
-        mCardAdapter.notifyDataSetChanged();
+        }.execute();
     }
 
     @Override
