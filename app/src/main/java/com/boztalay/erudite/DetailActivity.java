@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class DetailActivity extends Activity {
 
-    private static final int CHARS_PER_PAGE = 210;
+    private static final int CHARS_PER_PAGE = 230;
 
     private CardScrollView mCardScroller;
     private CardScrollAdapter mCardAdapter;
@@ -49,9 +49,7 @@ public class DetailActivity extends Activity {
         mPaginatedWikiContents = new ArrayList<String>();
 
         if (mWikiContents != null && mWikiContents.length() > 0) {
-            for (int i = 0; i < mWikiContents.length(); i += CHARS_PER_PAGE) {
-                mPaginatedWikiContents.add(mWikiContents.substring(i, Math.min(mWikiContents.length() - 1, i + CHARS_PER_PAGE)));
-            }
+            paginateWikiContents();
         } else {
             mPaginatedWikiContents.add("Couldn't load the Wikipedia page!");
         }
@@ -70,7 +68,8 @@ public class DetailActivity extends Activity {
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                CardBuilder card = new CardBuilder(DetailActivity.this, CardBuilder.Layout.TEXT);
+                CardBuilder card = new CardBuilder(DetailActivity.this, CardBuilder.Layout.TEXT_FIXED);
+
 
                 String wikiContents = (String) getItem(position);
                 card.setText(wikiContents);
@@ -98,6 +97,26 @@ public class DetailActivity extends Activity {
 
         setContentView(mCardScroller);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    }
+
+    private void paginateWikiContents() {
+        int currentPageStartIndex = 0;
+        int currentPageEndIndex = 0;
+        int currentEndSearchIndex = 0;
+
+        while(currentPageEndIndex < mWikiContents.length()) {
+            if(mWikiContents.length() - currentPageStartIndex <= CHARS_PER_PAGE) {
+                currentPageEndIndex = mWikiContents.length();
+            } else {
+                while (currentEndSearchIndex - currentPageStartIndex <= CHARS_PER_PAGE) {
+                    currentPageEndIndex = currentEndSearchIndex;
+                    currentEndSearchIndex = mWikiContents.indexOf(' ', currentEndSearchIndex + 1);
+                }
+            }
+
+            mPaginatedWikiContents.add(mWikiContents.substring(currentPageStartIndex, currentPageEndIndex).trim());
+            currentPageStartIndex = currentPageEndIndex;
+        }
     }
 
     @Override

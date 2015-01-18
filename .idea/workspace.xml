@@ -13,7 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93bf24a4-f274-4c83-aeb8-01c275a5efba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/DetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/DetailActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gradle.iws" />
@@ -77,10 +77,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2814259" vertical-offset="180" max-vertical-offset="4845">
+            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="4845">
               <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
               <folding>
                 <element signature="e#3019#7759#0" expanded="true" />
@@ -95,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DetailActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DetailActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/DetailActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="924" max-vertical-offset="1470">
-              <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.6593407" vertical-offset="1035" max-vertical-offset="1755">
+              <caret line="116" column="112" selection-start-line="116" selection-start-column="112" selection-end-line="116" selection-end-column="112" />
               <folding />
             </state>
           </provider>
@@ -752,8 +752,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/DetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/DetailActivity.java" />
       </list>
     </option>
   </component>
@@ -1081,7 +1081,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1106,17 +1106,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/DetailActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="924" max-vertical-offset="1470">
-          <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2814259" vertical-offset="180" max-vertical-offset="4845">
+        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="4845">
           <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
           <folding>
             <element signature="e#3019#7759#0" expanded="true" />
@@ -1127,6 +1119,14 @@
             <element signature="e#12651#12652#0" expanded="true" />
             <element signature="e#12704#12705#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/DetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6593407" vertical-offset="1035" max-vertical-offset="1755">
+          <caret line="116" column="112" selection-start-line="116" selection-start-column="112" selection-end-line="116" selection-end-column="112" />
+          <folding />
         </state>
       </provider>
     </entry>
