@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class DetailActivity extends Activity {
 
-    private static final int CHARS_PER_PAGE = 230;
+    private static final int CHARS_PER_PAGE = 228;
 
     private CardScrollView mCardScroller;
     private CardScrollAdapter mCardAdapter;
