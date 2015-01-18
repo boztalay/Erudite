@@ -133,7 +133,7 @@ public class MainActivity extends Activity implements RecognitionListener {
                         HttpURLConnection urlConnection;
 
                         try {
-                            URL url = new URL("https://en.wikipedia.org/w/api.php?action=query&list=search&srprop=timestamp&format=json&srsearch=" + URLEncoder.encode(searchTerm, "UTF-8"));
+                            URL url = new URL("https://en.wikipedia.org/w/api.php?action=query&list=search&srprop=timestamp&srlimit=1&format=json&srsearch=" + URLEncoder.encode(searchTerm, "UTF-8"));
                             urlConnection = (HttpURLConnection) url.openConnection();
                         } catch (Exception e) {
                             return null;
@@ -325,14 +325,15 @@ public class MainActivity extends Activity implements RecognitionListener {
             }
         }
 
-        if(isFirstRun && rawResults.size() > 0) {
-            isFirstRun = false;
-            mWordsSeen.clear();
-        }
-
         for (String result : rawResults) {
             // Might get expensive...
             if (!mWordsSeen.contains(result) && !mStopWordChecker.isStopWord(result)) {
+
+                if(isFirstRun) {
+                    isFirstRun = false;
+                    mWordsSeen.clear();
+                }
+
                 mWordsSeen.add(0, result);
 
                 if (mWordsSeen.size() > MAX_WORDS) {

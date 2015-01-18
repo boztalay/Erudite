@@ -14,6 +14,7 @@
   <component name="ChangeListManager">
     <list default="true" id="93bf24a4-f274-4c83-aeb8-01c275a5efba" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gradle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,14 +80,14 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44465292" vertical-offset="1968" max-vertical-offset="4755">
-              <caret line="179" column="27" selection-start-line="179" selection-start-column="27" selection-end-line="179" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.5347092" vertical-offset="4140" max-vertical-offset="4770">
+              <caret line="335" column="0" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
               <folding>
-                <element signature="e#3017#7743#0" expanded="true" />
-                <element signature="e#7732#7733#0" expanded="true" />
-                <element signature="e#11423#11431#0" expanded="true" />
-                <element signature="e#12361#12362#0" expanded="true" />
-                <element signature="e#12414#12415#0" expanded="true" />
+                <element signature="e#3017#7753#0" expanded="true" />
+                <element signature="e#7742#7743#0" expanded="true" />
+                <element signature="e#11433#11441#0" expanded="true" />
+                <element signature="e#12379#12380#0" expanded="true" />
+                <element signature="e#12432#12433#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1087,11 +1088,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="3810">
           <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
-            <element signature="e#3017#7743#0" expanded="true" />
-            <element signature="e#7732#7733#0" expanded="true" />
-            <element signature="e#11423#11431#0" expanded="true" />
-            <element signature="e#12361#12362#0" expanded="true" />
-            <element signature="e#12414#12415#0" expanded="true" />
+            <element signature="e#3017#7753#0" expanded="true" />
+            <element signature="e#7742#7743#0" expanded="true" />
+            <element signature="e#11433#11441#0" expanded="true" />
+            <element signature="e#12379#12380#0" expanded="true" />
+            <element signature="e#12432#12433#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1103,14 +1104,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44465292" vertical-offset="1968" max-vertical-offset="4755">
-          <caret line="179" column="27" selection-start-line="179" selection-start-column="27" selection-end-line="179" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.5347092" vertical-offset="4140" max-vertical-offset="4770">
+          <caret line="335" column="0" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
           <folding>
-            <element signature="e#3017#7743#0" expanded="true" />
-            <element signature="e#7732#7733#0" expanded="true" />
-            <element signature="e#11423#11431#0" expanded="true" />
-            <element signature="e#12361#12362#0" expanded="true" />
-            <element signature="e#12414#12415#0" expanded="true" />
+            <element signature="e#3017#7753#0" expanded="true" />
+            <element signature="e#7742#7743#0" expanded="true" />
+            <element signature="e#11433#11441#0" expanded="true" />
+            <element signature="e#12379#12380#0" expanded="true" />
+            <element signature="e#12432#12433#0" expanded="true" />
           </folding>
         </state>
       </provider>
