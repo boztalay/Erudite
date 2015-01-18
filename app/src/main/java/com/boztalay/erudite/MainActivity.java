@@ -80,9 +80,9 @@ public class MainActivity extends Activity implements RecognitionListener {
 
                 card.setText(word);
 
-                if(wikiContents != null) {
+                if (wikiContents != null) {
                     card.setFootnote("Loaded");
-                } else if(mIsLoading && word.equals(mWordLoading)) {
+                } else if (mIsLoading && word.equals(mWordLoading)) {
                     card.setFootnote("Loading...");
                 }
 
@@ -102,7 +102,7 @@ public class MainActivity extends Activity implements RecognitionListener {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final String word = mWordsSeen.get(position);
 
-                if(mIsLoading || isFirstRun) {
+                if (mIsLoading || isFirstRun) {
                     return;
                 } else {
                     mIsLoading = true;
@@ -115,12 +115,12 @@ public class MainActivity extends Activity implements RecognitionListener {
                 new AsyncTask<Void, Void, Void>() {
                     @Override
                     protected Void doInBackground(Void... voids) {
-                        if(mWikiContents.get(word) != null) {
+                        if (mWikiContents.get(word) != null) {
                             return null;
                         }
 
                         String pageTitle = runWikipediaSearch(word);
-                        if(pageTitle != null) {
+                        if (pageTitle != null) {
                             runWikipediaPageQuery(pageTitle);
                         } else {
                             runWikipediaPageQuery(word);
@@ -145,7 +145,7 @@ public class MainActivity extends Activity implements RecognitionListener {
 
                             JSONObject json = new JSONObject(thing);
                             JSONArray resultsArray = json.getJSONObject("query").getJSONArray("search");
-                            return ((JSONObject)resultsArray.get(0)).getString("title");
+                            return ((JSONObject) resultsArray.get(0)).getString("title");
                         } catch (Exception e) {
                             e.printStackTrace();
                         } finally {
@@ -176,7 +176,7 @@ public class MainActivity extends Activity implements RecognitionListener {
 
                             String contents = extractContent.substring(0, extractContent.indexOf("</p>"));
                             contents = contents.replaceAll("\\<.*?\\>", "");
-
+                            
                             mWikiContents.put(word, contents);
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -329,7 +329,7 @@ public class MainActivity extends Activity implements RecognitionListener {
             // Might get expensive...
             if (!mWordsSeen.contains(result) && !mStopWordChecker.isStopWord(result)) {
 
-                if(isFirstRun) {
+                if (isFirstRun) {
                     isFirstRun = false;
                     mWordsSeen.clear();
                 }
