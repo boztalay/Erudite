@@ -43,6 +43,8 @@ public class MainActivity extends Activity implements RecognitionListener {
     private boolean mIsLoading;
     private String mWordLoading;
 
+    private boolean isFirstRun;
+
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -53,6 +55,9 @@ public class MainActivity extends Activity implements RecognitionListener {
 
         mIsLoading = false;
         mWordLoading = null;
+
+        isFirstRun = true;
+        mWordsSeen.add("Start talking!");
 
         mCardScroller = new CardScrollView(this);
         mCardAdapter = new CardScrollAdapter() {
@@ -97,7 +102,7 @@ public class MainActivity extends Activity implements RecognitionListener {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final String word = mWordsSeen.get(position);
 
-                if(mIsLoading) {
+                if(mIsLoading || isFirstRun) {
                     return;
                 } else {
                     mIsLoading = true;
@@ -170,11 +175,8 @@ public class MainActivity extends Activity implements RecognitionListener {
                             String extractContent = json.getJSONObject("query").getJSONObject("pages").getJSONObject(pageKey).getString("extract");
 
                             String contents = extractContent.substring(0, extractContent.indexOf("</p>"));
-                            if(contents.contains("refer to") || contents.contains("refers to")) {
-                                contents = extractContent.substring(extractContent.indexOf("<li>"), extractContent.indexOf("</li>") + 1);
-                            }
-
                             contents = contents.replaceAll("\\<.*?\\>", "");
+
                             mWikiContents.put(word, contents);
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -321,6 +323,11 @@ public class MainActivity extends Activity implements RecognitionListener {
                     rawResults.add(word.trim());
                 }
             }
+        }
+
+        if(isFirstRun && rawResults.size() > 0) {
+            isFirstRun = false;
+            mWordsSeen.clear();
         }
 
         for (String result : rawResults) {
