@@ -16,12 +16,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -112,13 +114,50 @@ public class MainActivity extends Activity implements RecognitionListener {
                             return null;
                         }
 
+                        String pageTitle = runWikipediaSearch(word);
+                        if(pageTitle != null) {
+                            runWikipediaPageQuery(pageTitle);
+                        } else {
+                            runWikipediaPageQuery(word);
+                        }
+
+                        return null;
+                    }
+
+                    private String runWikipediaSearch(String searchTerm) {
                         HttpURLConnection urlConnection;
 
                         try {
-                            URL url = new URL("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=" + word);
+                            URL url = new URL("https://en.wikipedia.org/w/api.php?action=query&list=search&srprop=timestamp&format=json&srsearch=" + URLEncoder.encode(searchTerm, "UTF-8"));
                             urlConnection = (HttpURLConnection) url.openConnection();
                         } catch (Exception e) {
                             return null;
+                        }
+
+                        try {
+                            BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                            String thing = reader.readLine();
+
+                            JSONObject json = new JSONObject(thing);
+                            JSONArray resultsArray = json.getJSONObject("query").getJSONArray("search");
+                            return ((JSONObject)resultsArray.get(0)).getString("title");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        } finally {
+                            urlConnection.disconnect();
+                        }
+
+                        return null;
+                    }
+
+                    private void runWikipediaPageQuery(String pageTitle) {
+                        HttpURLConnection urlConnection;
+
+                        try {
+                            URL url = new URL("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=" + URLEncoder.encode(pageTitle, "UTF-8"));
+                            urlConnection = (HttpURLConnection) url.openConnection();
+                        } catch (Exception e) {
+                            return;
                         }
 
                         try {
@@ -142,8 +181,6 @@ public class MainActivity extends Activity implements RecognitionListener {
                         } finally {
                             urlConnection.disconnect();
                         }
-
-                        return null;
                     }
 
                     @Override
