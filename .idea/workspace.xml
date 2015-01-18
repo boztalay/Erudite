@@ -76,27 +76,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2505" max-vertical-offset="4710">
-              <caret line="209" column="4" selection-start-line="209" selection-start-column="4" selection-end-line="209" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.64727956" vertical-offset="2400" max-vertical-offset="4695">
+              <caret line="215" column="0" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
               <folding>
                 <element signature="e#3019#7759#0" expanded="true" />
                 <element signature="e#7748#7749#0" expanded="true" />
-                <element signature="e#11250#11258#0" expanded="true" />
-                <element signature="e#12198#12199#0" expanded="true" />
-                <element signature="e#12251#12252#0" expanded="true" />
+                <element signature="e#11207#11215#0" expanded="true" />
+                <element signature="e#12155#12156#0" expanded="true" />
+                <element signature="e#12208#12209#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DetailActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DetailActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/DetailActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2747253" vertical-offset="750" max-vertical-offset="1470">
-              <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="924" max-vertical-offset="1470">
+              <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -749,8 +749,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/DetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1087,9 +1087,9 @@
           <folding>
             <element signature="e#3019#7759#0" expanded="true" />
             <element signature="e#7748#7749#0" expanded="true" />
-            <element signature="e#11250#11258#0" expanded="true" />
-            <element signature="e#12198#12199#0" expanded="true" />
-            <element signature="e#12251#12252#0" expanded="true" />
+            <element signature="e#11207#11215#0" expanded="true" />
+            <element signature="e#12155#12156#0" expanded="true" />
+            <element signature="e#12208#12209#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1099,25 +1099,25 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/DetailActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2505" max-vertical-offset="4710">
-          <caret line="209" column="4" selection-start-line="209" selection-start-column="4" selection-end-line="209" selection-end-column="4" />
-          <folding>
-            <element signature="e#3019#7759#0" expanded="true" />
-            <element signature="e#7748#7749#0" expanded="true" />
-            <element signature="e#11250#11258#0" expanded="true" />
-            <element signature="e#12198#12199#0" expanded="true" />
-            <element signature="e#12251#12252#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="924" max-vertical-offset="1470">
+          <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/DetailActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/boztalay/erudite/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2747253" vertical-offset="750" max-vertical-offset="1470">
-          <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
-          <folding />
+        <state vertical-scroll-proportion="0.64727956" vertical-offset="2400" max-vertical-offset="4695">
+          <caret line="215" column="0" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+          <folding>
+            <element signature="e#3019#7759#0" expanded="true" />
+            <element signature="e#7748#7749#0" expanded="true" />
+            <element signature="e#11207#11215#0" expanded="true" />
+            <element signature="e#12155#12156#0" expanded="true" />
+            <element signature="e#12208#12209#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

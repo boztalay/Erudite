@@ -226,7 +226,6 @@ public class MainActivity extends Activity implements RecognitionListener {
     @Override
     protected void onPause() {
         mCardScroller.deactivate();
-        mSpeechRecognizer.stopListening();
         super.onPause();
     }
 
